@@ -1,0 +1,15 @@
+
+plugin.tx_kiwipopup_kiwipopup {
+	view {
+		# cat=plugin.tx_kiwipopup_kiwipopup/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:kiwi_popup/Resources/Private/Templates/
+		# cat=plugin.tx_kiwipopup_kiwipopup/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:kiwi_popup/Resources/Private/Partials/
+		# cat=plugin.tx_kiwipopup_kiwipopup/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:kiwi_popup/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_kiwipopup_kiwipopup//a; type=string; label=Default storage PID
+		storagePid =
+	}
+}

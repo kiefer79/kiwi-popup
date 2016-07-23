@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-07-23T23:39:58Z" product-name="kiwi_popup">
+		<header/>
+		<body>
+			<trans-unit id="sheet_general">
+				<source>General</source>
+			</trans-unit>
+			<trans-unit id="type">
+				<source>Popup content type</source>
+			</trans-unit>
+			<trans-unit id="type.image">
+				<source>Image(s)</source>
+			</trans-unit>
+			<trans-unit id="type.html">
+				<source>HTML</source>
+			</trans-unit>
+			<trans-unit id="type.cobj">
+				<source>Content Object</source>
+			</trans-unit>
+			<trans-unit id="popupcontent">
+				<source>HTML Content</source>
+			</trans-unit>
+			<trans-unit id="popupfile">
+				<source>Popup Image (random if more than one)</source>
+			</trans-unit>
+			<trans-unit id="imageMaxW">
+				<source>Max image width (px)</source>
+			</trans-unit>
+			<trans-unit id="imageMaxH">
+				<source>Max image height (px)</source>
+			</trans-unit>
+			<trans-unit id="cObject">
+				<source>Content element</source>
+			</trans-unit>
+			<trans-unit id="showCaption">
+				<source>Show Caption</source>
+			</trans-unit>
+			<trans-unit id="captionText">
+				<source>Caption text (one row per image)</source>
+			</trans-unit>
+			<trans-unit id="sessionStorage">
+				<source>Show Popup only once a session?</source>
+			</trans-unit>
+			<trans-unit id="sessionStorageOption">
+				<source>Choose session storage method</source>
+			</trans-unit>
+			<trans-unit id="sessionStorageOption.general">
+				<source>By general</source>
+			</trans-unit>
+			<trans-unit id="sessionStorageOption.page">
+				<source>By page ID</source>
+			</trans-unit>
+			<trans-unit id="sessionStorageOption.plugin">
+				<source>By plugin UID</source>
+			</trans-unit>
+			<trans-unit id="sessionStorageOption.image">
+				<source>By Image</source>
+			</trans-unit>
+			<trans-unit id="autoClose">
+				<source>Enable time based hiding of layer</source>
+			</trans-unit>
+			<trans-unit id="autoCloseSeconds">
+				<source>Seconds to wait for hiding layer</source>
+			</trans-unit>
+			<trans-unit id="hideCloseButton">
+				<source>Hide close button</source>
+			</trans-unit>
+			<trans-unit id="sheet_javascript">
+				<source>Javascript</source>
+			</trans-unit>
+			<trans-unit id="jQueryInclude">
+				<source>Include jQuery</source>
+			</trans-unit>
+			<trans-unit id="sheet_link">
+				<source>Link</source>
+			</trans-unit>
+			<trans-unit id="link">
+				<source>Link</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

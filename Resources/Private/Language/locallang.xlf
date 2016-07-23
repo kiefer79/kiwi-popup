@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2016-07-23T23:39:58Z" product-name="kiwi_popup">
+		<header/>
+		<body>
+			<trans-unit id="tx_kiwipopup_domain_model_popup">
+				<source>Popup</source>
+			</trans-unit>
+			<trans-unit id="tx_kiwipopup_domain_model_popup.title">
+				<source>Title</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

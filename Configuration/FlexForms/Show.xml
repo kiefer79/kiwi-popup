@@ -1,0 +1,300 @@
+<T3DataStructure>
+    <sheets>
+        <GENERAL>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sheet_general
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+
+                    <settings.type>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:type</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>select</type>
+                                <items>
+                                    <numIndex index="0">
+                                        <numIndex index="0">
+                                            LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:type.image
+                                        </numIndex>
+                                        <numIndex index="1">IMAGE</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1">
+                                        <numIndex index="0">
+                                            LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:type.html
+                                        </numIndex>
+                                        <numIndex index="1">HTML</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2">
+                                        <numIndex index="0">
+                                            LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:type.cobj
+                                        </numIndex>
+                                        <numIndex index="1">COBJ</numIndex>
+                                    </numIndex>
+                                </items>
+                                <size>1</size>
+                            </config>
+                        </TCEforms>
+                    </settings.type>
+
+                    <settings.popupcontent>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:popupcontent</label>
+                            <displayCond>FIELD:settings.type:=:HTML</displayCond>
+                            <config>
+                                <type>text</type>
+                                <cols>52</cols>
+                                <rows>5</rows>
+                            </config>
+                        </TCEforms>
+                    </settings.popupcontent>
+
+                    <settings.popupfile>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:popupfile</label>
+                            <displayCond>FIELD:settings.type:=:IMAGE</displayCond>
+                            <config>
+                                <type>inline</type>
+                                <maxitems>99</maxitems>
+                                <foreign_table>sys_file_reference</foreign_table>
+                                <!--<foreign_field>uid_foreign</foreign_field>-->
+                                <foreign_table_field>tablenames</foreign_table_field>
+                                <foreign_label>uid_local</foreign_label>
+                                <foreign_sortby>sorting_foreign</foreign_sortby>
+                                <foreign_selector>uid_local</foreign_selector>
+                                <foreign_selector_fieldTcaOverride type="array">
+                                    <config>
+                                        <appearance>
+                                            <elementBrowserType>file</elementBrowserType>
+                                            <elementBrowserAllowed>jpg,png</elementBrowserAllowed>
+                                        </appearance>
+                                    </config>
+                                </foreign_selector_fieldTcaOverride>
+                                <foreign_match_fields type="array">
+                                    <fieldname>image</fieldname>
+                                </foreign_match_fields>
+                                <appearance type="array">
+                                    <newRecordLinkAddTitle>1</newRecordLinkAddTitle>
+                                    <headerThumbnail>
+                                        <field>uid_local</field>
+                                        <height>64</height>
+                                        <width>64</width>
+                                    </headerThumbnail>
+                                </appearance>
+                            </config>
+                        </TCEforms>
+                    </settings.popupfile>
+
+                    <settings.imageMaxW>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:imageMaxW</label>
+                            <displayCond>FIELD:settings.type:=:IMAGE</displayCond>
+                            <config>
+                                <type>input</type>
+                                <default></default>
+                                <eval>trim,int</eval>
+                                <size>4</size>
+                            </config>
+                        </TCEforms>
+                    </settings.imageMaxW>
+
+                    <settings.imageMaxH>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:imageMaxH</label>
+                            <displayCond>FIELD:settings.type:=:IMAGE</displayCond>
+                            <config>
+                                <type>input</type>
+                                <default></default>
+                                <eval>trim,int</eval>
+                                <size>4</size>
+                            </config>
+                        </TCEforms>
+                    </settings.imageMaxH>
+
+                    <settings.cObject>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:cObject</label>
+                            <displayCond>FIELD:settings.type:=:COBJ</displayCond>
+                            <config>
+                                <type>group</type>
+                                <internal_type>db</internal_type>
+                                <allowed>tt_content</allowed>
+                                <maxitems>3</maxitems>
+                                <minitems>1</minitems>
+                                <size>3</size>
+                            </config>
+                        </TCEforms>
+                    </settings.cObject>
+
+                    <settings.showCaption>
+                        <TCEforms>
+                            <onChange>reload</onChange>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:showCaption</label>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.showCaption>
+
+                    <settings.captionText>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:captionText</label>
+                            <displayCond>FIELD:settings.showCaption:=:1</displayCond>
+                            <config>
+                                <type>text</type>
+                                <cols>52</cols>
+                                <rows>5</rows>
+                            </config>
+                        </TCEforms>
+                    </settings.captionText>
+
+                    <settings.sessionStorage>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sessionStorage</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.sessionStorage>
+
+                    <settings.sessionStorageOption>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sessionStorageOption
+                            </label>
+                            <displayCond>FIELD:settings.sessionStorage:=:1</displayCond>
+                            <config>
+                                <type>select</type>
+                                <items type="array">
+                                    <numIndex index="0" type="array">
+                                        <numIndex index="0">
+                                            LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sessionStorageOption.general
+                                        </numIndex>
+                                        <numIndex index="1">general</numIndex>
+                                    </numIndex>
+                                    <numIndex index="1" type="array">
+                                        <numIndex index="0">
+                                            LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sessionStorageOption.page
+                                        </numIndex>
+                                        <numIndex index="1">page</numIndex>
+                                    </numIndex>
+                                    <numIndex index="2" type="array">
+                                        <numIndex index="0">
+                                            LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sessionStorageOption.plugin
+                                        </numIndex>
+                                        <numIndex index="1">plugin</numIndex>
+                                    </numIndex>
+                                    <numIndex index="3" type="array">
+                                        <numIndex index="0">
+                                            LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sessionStorageOption.image
+                                        </numIndex>
+                                        <numIndex index="1">image</numIndex>
+                                    </numIndex>
+                                </items>
+                            </config>
+                            <default>2</default>
+                        </TCEforms>
+                    </settings.sessionStorageOption>
+
+                    <settings.autoClose>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:autoClose</label>
+                            <onChange>reload</onChange>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.autoClose>
+
+                    <settings.autoCloseSeconds>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:autoCloseSeconds
+                            </label>
+                            <displayCond>FIELD:settings.autoClose:=:1</displayCond>
+                            <config>
+                                <type>input</type>
+                                <size>4</size>
+                                <eval>int</eval>
+                                <range type="array">
+                                    <upper>60</upper>
+                                    <lower>1</lower>
+                                </range>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.autoCloseSeconds>
+
+                    <settings.hideCloseButton>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:hideCloseButton
+                            </label>
+                            <displayCond>FIELD:settings.autoClose:=:1</displayCond>
+                            <config>
+                                <type>check</type>
+                                <default>0</default>
+                            </config>
+                        </TCEforms>
+                    </settings.hideCloseButton>
+                </el>
+            </ROOT>
+        </GENERAL>
+
+        <JAVASCRIPT>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sheet_javascript
+                    </sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.jQueryInclude>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:jQueryInclude</label>
+                            <config>
+                                <type>check</type>
+                                <default>1</default>
+                            </config>
+                        </TCEforms>
+                    </settings.jQueryInclude>
+                </el>
+            </ROOT>
+        </JAVASCRIPT>
+
+        <LINK>
+            <ROOT>
+                <TCEforms>
+                    <sheetTitle>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:sheet_link</sheetTitle>
+                </TCEforms>
+                <type>array</type>
+                <el>
+                    <settings.link>
+                        <TCEforms>
+                            <label>LLL:EXT:kiwi_popup/Resources/Private/Language/locallang_ff.xlf:link</label>
+                            <config>
+                                <type>text</type>
+                                <cols>52</cols>
+                                <rows>5</rows>
+                                <checkbox></checkbox>
+                                <eval>trim</eval>
+                                <module type="array">
+                                    <name>wizard_element_browser</name>
+                                    <urlParameters type="array">
+                                        <mode>wizard</mode>
+                                        <act>file</act>
+                                    </urlParameters>
+                                </module>
+                            </config>
+                        </TCEforms>
+                    </settings.link>
+
+                </el>
+            </ROOT>
+        </LINK>
+    </sheets>
+</T3DataStructure>
