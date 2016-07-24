@@ -8,19 +8,12 @@ $(document).ready(function () {
 	var inner = $('#kiwi_popup_inner');
 	var close = $('#kiwi_popup_close');
 
-	console.log('link: ' + link);
-	console.log('autoclose: ' + autoclose);
-	console.log('hideclosebutton: ' + hideclosebutton);
-
 	layer.css('visibility', 'hidden');
 
 	// calculate top position
 	windowHeight = $(window).height();
-	console.log(windowHeight);
 	contentHeight = content.height();
-	console.log(contentHeight);
 	topPos = (windowHeight - contentHeight) / 2;
-	console.log(topPos);
 	content.css('top', topPos);
 
 	// calculate left position
@@ -35,33 +28,26 @@ $(document).ready(function () {
 	$("html, body").animate({ scrollTop: 0 }, "slow");
 
 	if (hideclosebutton) {
-		console.log('hideclosebutton not set');
 		close.on('click', function () {
-			console.log('click closebutton');
 			layer.fadeOut(1000);
 			content.remove();
 		});
 	}
 
 	if (link) {
-		console.log('link: ' + link);
 		inner.css('cursor', 'pointer');
 		inner.on('click', function () {
-			console.log('click link');
 			window.location.href = link;
 		});
 	} else if (!hideclosebutton) {
-		console.log('hideclosebutton not set');
 		inner.css('cursor', 'pointer');
 		inner.on('click', function () {
-			console.log('click inner');
 			layer.fadeOut(1000);
 			content.remove();
 		});
 	}
 
 	if (autoclose > 0) {
-		console.log('autoclose');
 		var timerUpdate = setInterval(
 			function () {
 				if (autoclose > 0) {
