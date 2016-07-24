@@ -1,0 +1,60 @@
+#kiwi_popup_layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	width: 100%;
+	height: 100%;
+	background-image: url(../Img/layer-opacity.png);
+	text-align: center;
+	vertical-align: middle;
+	visibility: hidden;
+	display: block;
+}
+
+#kiwi_popup_content {
+	position: absolute;
+	border: 5px solid white;
+	background-color: #666;
+	margin: 0;
+	padding: 0;
+	line-height:1px;
+	height: auto;
+}
+
+#kiwi_popup_inner {
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	border: 0;
+}
+
+#kiwi_popup_close {
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 20px;
+	right: -45px;
+	cursor: pointer;
+	background: url(../Img/close.png) top left;
+	color: white;
+}
+#kiwi_popup_close:hover {
+	background: url(../Img/close.png) top right;
+}
+
+#kiwi_popup_caption {
+	background: white;
+	color: black;
+	text-align: center;
+	padding: 5px 3px 3px 3px;
+	font: 11px Century Gothic, Verdana, Arial, sans-serif black;
+}
+
+#kiwi_popup_autoclose {
+	display: block;
+	background: white;
+	text-align: right;
+	padding: 5px 3px 3px 3px;
+	font: 11px Century Gothic, Verdana, Arial, sans-serif black;
+}
