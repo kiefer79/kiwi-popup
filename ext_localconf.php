@@ -3,6 +3,7 @@ if (!defined('TYPO3_MODE')) {
 	die('Access denied.');
 }
 
+
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
 	'Kiefer.' . $_EXTKEY,
 	'Kiwipopup',
@@ -12,7 +13,6 @@ if (!defined('TYPO3_MODE')) {
 	),
 	// non-cacheable actions
 	array(
-		'Popup' => '',
-		
+		'Popup' => 'showPopup',
 	)
 );
