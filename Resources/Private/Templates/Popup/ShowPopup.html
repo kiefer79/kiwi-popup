@@ -28,14 +28,30 @@
 					</f:case>
 				</f:switch>
 			</div>
-			<f:if condition="{caption}"><div id="kiwi_popup_caption">{caption}</div></f:if>
-			<f:if condition="{autoclose}">
-				<div id="kiwi_popup_autoclose">
-					<f:translate key="LLL:EXT:kiwi_popup/locallang.xml:autoclose_text" />
-					<span id="kiwi_popup_timevalue">{autoclose}</span>
-					<f:translate key="LLL:EXT:kiwi_popup/locallang.xml:autoclose_seconds" />
-				</div>
-			</f:if>
+			<div id="kiwi_popup_bottom">
+				<f:if condition="{settings.type} == 'IMAGE'">
+					<f:then>
+						<f:if condition="{popupimage.reference.description}">
+							<div id="kiwi_popup_caption">{popupimage.reference.description}</div>
+						</f:if>
+					</f:then>
+					<f:else>
+						<f:if condition="{caption}">
+							<div id="kiwi_popup_caption">{caption}</div>
+						</f:if>
+					</f:else>
+				</f:if>
+
+				<f:if condition="{autoclose}">
+					<div id="kiwi_popup_autoclose">
+						<f:translate key="LLL:EXT:kiwi_popup/locallang.xml:autoclose_text" />
+						<span id="kiwi_popup_timevalue">{autoclose}</span>
+						<f:translate key="LLL:EXT:kiwi_popup/locallang.xml:autoclose_seconds" />
+					</div>
+				</f:if>
+
+				<div id="kiwi_popup_clearer">&nbsp;</div>
+			</div>
 		</div>
 	</div>
 </f:section>
