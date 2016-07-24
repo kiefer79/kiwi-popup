@@ -73,28 +73,20 @@ class PopupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 				$this->imageKey = (is_array($images) && count($images) > 1) ? array_rand($images, 1) : 0;
 				$image = $images[$this->imageKey];
 				
+				DebuggerUtility::var_dump($image);
+				
 				// has this image already been showed in session?
 				if ($this->settings['sessionStorageOption'] == 'image') {
 					$this->sD = $GLOBALS['TSFE']->fe_user->getKey('ses', 'tx_kiwipopup');
-					
-					//$sessionVars['image'][$this->cObj->data['uid']][$this->imageKey]
-					
 					if ($this->sD['image'][$this->cObj->data['uid']][$this->imageKey]) {
 						$showImage = FALSE;
 					}
 				}
 				
 				if ($showImage) {
-					// generate file path
-					$imageConf['file'] = 'uploads/tx_kiwipopup/' . $image;
-					if (intval($this->settings['imageMaxW']))
-						$imageConf['file.']['maxW'] = intval($this->settings['imageMaxW']);
-					if (intval($this->settings['imageMaxH']))
-						$imageConf['file.']['maxH'] = intval($this->settings['imageMaxH']);
-					// render content
-					$content = $this->cObj->IMAGE($imageConf);
-				} else {
-					$content = '';
+					$this->view->assign('imageUid', $image);
+					$this->view->assign('imageMaxW', $this->settings['imageMaxW']);
+					$this->view->assign('imageMaxH', $this->settings['imageMaxH']);
 				}
 			}
 			

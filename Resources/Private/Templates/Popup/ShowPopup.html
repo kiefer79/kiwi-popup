@@ -4,7 +4,19 @@
 <f:section name="main">
 
 <f:flashMessages />
-<f:render partial="Popup/Properties" arguments="{popup:popup}" />
-<f:link.action action="list">Back to list</f:link.action><br />
-<f:link.action action="new">New Popup</f:link.action>
+
+<f:debug>{_all}</f:debug>
+
+
+<f:switch expression="{settings.type}">
+	<f:case value="IMAGE">
+		<f:render partial="Image" />
+	</f:case>
+	<f:case value="HTML">Hello Mrs. {person.lastName}</f:case>
+	<f:case value="COBJ">Hello Miss {person.lastName}</f:case>
+	<f:case default="TRUE">A person with no specified gender</f:case>
+</f:switch>
+
+<f:image src="{imageUid}" treatIdAsReference="1" alt="" maxHeight="{imageMaxH}" maxWidth="{imageMaxW}" />
 </f:section>
+
