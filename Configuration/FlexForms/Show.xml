@@ -60,7 +60,7 @@
                                 <type>inline</type>
                                 <maxitems>99</maxitems>
                                 <foreign_table>sys_file_reference</foreign_table>
-                                <!--<foreign_field>uid_foreign</foreign_field>-->
+                                <foreign_field>uid_foreign</foreign_field>
                                 <foreign_table_field>tablenames</foreign_table_field>
                                 <foreign_label>uid_local</foreign_label>
                                 <foreign_sortby>sorting_foreign</foreign_sortby>
