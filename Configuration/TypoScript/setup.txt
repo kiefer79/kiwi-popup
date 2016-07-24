@@ -11,35 +11,81 @@ plugin.tx_kiwipopup_kiwipopup {
 }
 
 plugin.tx_kiwipopup._CSS_DEFAULT_STYLE (
-	textarea.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
+	#kiwi_popup_layer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 90;
+		width: 100%;
+		height: 100%;
+		background-image: url(../../typo3conf/ext/kiwi_popup/Resources/Public/Img/layer-opacity.png);
+		text-align: center;
+		vertical-align: middle;
+		visibility: hidden;
+		display: block;
 	}
 
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
+	#kiwi_popup_content {
+		position: absolute;
+		border: 5px solid white;
+		background-color: #666;
+		margin: 0;
+		padding: 0;
+		line-height:1px;
+		height: auto;
 	}
 
-	.tx-kiwi-popup table {
-		border-collapse:separate;
-		border-spacing:10px;
+	#kiwi_popup_inner {
+		margin: 0;
+		padding: 0;
+		line-height: 0;
+		border: 0;
 	}
 
-	.tx-kiwi-popup table th {
-		font-weight:bold;
+	#kiwi_popup_close {
+		width: 40px;
+		height: 40px;
+		position: absolute;
+		top: 20px;
+		right: -45px;
+		cursor: pointer;
+		background: url(../../typo3conf/ext/kiwi_popup/Resources/Public/Img/close.png) top left;
+		color: white;
+	}
+	#kiwi_popup_close:hover {
+		background: url(../../typo3conf/ext/kiwi_popup/Resources/Public/Img/close.png) top right;
 	}
 
-	.tx-kiwi-popup table td {
-		vertical-align:top;
+	#kiwi_popup_bottom {
+		display: block;
+		background: white;
+		height: 16px;
 	}
 
-	.typo3-messages .message-error {
-		color:red;
+	#kiwi_popup_caption {
+		padding: 10px 3px 3px 3px;
+		text-align: left;
+		float: left;
+		display:inline-block;
+		width: 90%;
+		background: white;
 	}
 
-	.typo3-messages .message-ok {
-		color:green;
+	#kiwi_popup_autoclose {
+		display: block;
+		text-align: right;
+		padding: 10px 3px 3px 3px;
+		float: right;
+		display:inline-block;
+		width: 10%;
+		background: white;
+	}
+
+	#kiwi_popup_clearer {
+		clear:both:
+		height: 1px;
+		line-height: 1px;
+		display: block;
 	}
 
 )

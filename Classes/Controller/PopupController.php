@@ -77,12 +77,9 @@ class PopupController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController
 		$siteRelPath = ExtensionManagementUtility::siteRelPath('kiwi_popup');
 		$resourcesPath = 'Resources/Public/';
 		
-		// add main css
-		$pageRenderer->addCssFile($siteRelPath.$resourcesPath.'Css/kiwi_popup.css');
-		
 		// include jQuery?
 		if ($this->settings['jQueryInclude']) {
-			$pageRenderer->addJsLibrary('jQuery', $siteRelPath . $resourcesPath . 'Js/jQuery.min.js');
+			$pageRenderer->addJsFooterLibrary('jQuery', $siteRelPath . $resourcesPath . 'Js/jquery-3.1.0.min.js');
 		}
 		
 		// add main js
