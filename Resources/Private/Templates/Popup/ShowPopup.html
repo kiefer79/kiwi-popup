@@ -1,22 +1,41 @@
-
 <f:layout name="Default" />
-
 <f:section name="main">
+	<f:flashMessages />
 
-<f:flashMessages />
+	<script type="text/javascript">/*<![CDATA[*/
+	/*]]>*/
+	var link = '{link}';
+	var autoclose = '{autoclose}';
+	var hideclosebutton = '{hideclosebutton}';
+	/*<![CDATA[*/ /*]]>*/</script>
 
-<f:debug>{_all}</f:debug>
-
-
-<f:switch expression="{settings.type}">
-	<f:case value="IMAGE">
-		<f:render partial="Image" />
-	</f:case>
-	<f:case value="HTML">Hello Mrs. {person.lastName}</f:case>
-	<f:case value="COBJ">Hello Miss {person.lastName}</f:case>
-	<f:case default="TRUE">A person with no specified gender</f:case>
-</f:switch>
-
-<f:image src="{imageUid}" treatIdAsReference="1" alt="" maxHeight="{imageMaxH}" maxWidth="{imageMaxW}" />
+	<div id="kiwi_popup_layer">
+		<div id="kiwi_popup_content">
+			<f:if condition="{hideclosebutton}">
+				<f:then></f:then>
+				<f:else><div id="kiwi_popup_close" title="<f:translate key="LLL:EXT:kiwi_popup/pi1/locallang.xml:close" />">&nbsp;</div></f:else>
+			</f:if>
+			<div id="kiwi_popup_inner">
+				<f:switch expression="{settings.type}">
+					<f:case value="IMAGE">
+						<f:render partial="Image" arguments="{image:popupimage}"/>
+					</f:case>
+					<f:case value="HTML">
+						<f:format.html>{popupcontent}</f:format.html>
+					</f:case>
+					<f:case value="COBJ">
+						<f:format.html>{popupcontent}</f:format.html>
+					</f:case>
+				</f:switch>
+			</div>
+			<f:if condition="{caption}"><div id="kiwi_popup_caption">{caption}</div></f:if>
+			<f:if condition="{autoclose}">
+				<div id="kiwi_popup_autoclose">
+					<f:translate key="LLL:EXT:kiwi_popup/locallang.xml:autoclose_text" />
+					<span id="kiwi_popup_timevalue">{autoclose}</span>
+					<f:translate key="LLL:EXT:kiwi_popup/locallang.xml:autoclose_seconds" />
+				</div>
+			</f:if>
+		</div>
+	</div>
 </f:section>
-
