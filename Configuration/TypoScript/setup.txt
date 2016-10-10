@@ -67,7 +67,6 @@ plugin.tx_kiwipopup._CSS_DEFAULT_STYLE (
 		text-align: left;
 		float: left;
 		display:inline-block;
-		width: 90%;
 		background: white;
 	}
 

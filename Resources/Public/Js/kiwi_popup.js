@@ -11,7 +11,7 @@ $(document).ready(function () {
 	layer.css('visibility', 'hidden');
 
 	// calculate top position
-	windowHeight = $(window).height();
+	windowHeight = window.innerHeight;
 	contentHeight = content.height();
 	topPos = (windowHeight - contentHeight) / 2;
 	content.css('top', topPos);
@@ -22,42 +22,46 @@ $(document).ready(function () {
 	leftPos = (windowWidth - contentWidth) / 2;
 	content.css('left', leftPos);
 
-	layer.css('visibility', 'visible');
-	layer.hide();
-	layer.fadeIn(1000);
-	$("html, body").animate({ scrollTop: 0 }, "slow");
 
-	if (hideclosebutton) {
-		close.on('click', function () {
-			layer.fadeOut(1000);
-			content.remove();
-		});
+	if (showPopup) {
+		layer.css('visibility', 'visible');
+		layer.hide();
+		layer.fadeIn(1000);
+		$("html, body").animate({ scrollTop: 0 }, "slow");
+
+		if (hideclosebutton) {
+			close.on('click', function () {
+				layer.fadeOut(1000);
+				content.remove();
+			});
+		}
+
+		if (link) {
+			inner.css('cursor', 'pointer');
+			inner.on('click', function () {
+				window.location.href = link;
+			});
+		} else if (!hideclosebutton) {
+			inner.css('cursor', 'pointer');
+			inner.on('click', function () {
+				layer.fadeOut(1000);
+				content.remove();
+			});
+		}
+
+		if (autoclose > 0) {
+			var timerUpdate = setInterval(
+				function () {
+					if (autoclose > 0) {
+						$('#kiwi_popup_timevalue').text(autoclose);
+						autoclose--;
+					} else {
+						layer.fadeOut(1000);
+						content.remove();
+						clearInterval(timerUpdate);
+					}
+				}, 1000);
+		}
 	}
 
-	if (link) {
-		inner.css('cursor', 'pointer');
-		inner.on('click', function () {
-			window.location.href = link;
-		});
-	} else if (!hideclosebutton) {
-		inner.css('cursor', 'pointer');
-		inner.on('click', function () {
-			layer.fadeOut(1000);
-			content.remove();
-		});
-	}
-
-	if (autoclose > 0) {
-		var timerUpdate = setInterval(
-			function () {
-				if (autoclose > 0) {
-					$('#kiwi_popup_timevalue').text(autoclose);
-					autoclose--;
-				} else {
-					layer.fadeOut(1000);
-					content.remove();
-					clearInterval(timerUpdate);
-				}
-			}, 1000);
-	}
 });

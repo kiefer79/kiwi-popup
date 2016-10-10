@@ -7,28 +7,37 @@
 	var link = '{link}';
 	var autoclose = '{autoclose}';
 	var hideclosebutton = '{hideclosebutton}';
+	var showPopup = '{showPopup}';
 	/*<![CDATA[*/ /*]]>*/</script>
 
 	<div id="kiwi_popup_layer">
 		<div id="kiwi_popup_content">
+
 			<f:if condition="{hideclosebutton}">
 				<f:then></f:then>
 				<f:else><div id="kiwi_popup_close" title="<f:translate key="LLL:EXT:kiwi_popup/pi1/locallang.xml:close" />">&nbsp;</div></f:else>
 			</f:if>
+
 			<div id="kiwi_popup_inner">
+
 				<f:switch expression="{settings.type}">
 					<f:case value="IMAGE">
-						<f:render partial="Image" arguments="{image:popupimage}"/>
+						<f:if condition="{popupimage}">
+							<f:image src="fileadmin/{popupimage.original.identifier}" maxWidth="{imageMaxW}" maxHeight="{imageMaxH}" alt="{popupimage.reference.alternative}" title="{popupimage.reference.title}"></f:image>
+						</f:if>
 					</f:case>
 					<f:case value="HTML">
-						<f:format.html>{popupcontent}</f:format.html>
+						<f:format.htmlentitiesDecode>{popupcontent}</f:format.htmlentitiesDecode>
 					</f:case>
 					<f:case value="COBJ">
 						<f:format.html>{popupcontent}</f:format.html>
 					</f:case>
 				</f:switch>
+
 			</div>
+
 			<div id="kiwi_popup_bottom">
+
 				<f:if condition="{settings.type} == 'IMAGE'">
 					<f:then>
 						<f:if condition="{popupimage.reference.description}">
